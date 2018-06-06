@@ -1,0 +1,70 @@
+<staff-navbar></staff-navbar>
+
+<div class="container" style="padding-top: 70px">
+
+  <staff-feedback-tabs [parentData]="cvId"></staff-feedback-tabs>
+
+  <h1 class="text-center">{{ cv.name }}</h1>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <label for="profile">Profile</label>
+    </div>
+    <div class="panel-body">{{ cv.profile }}</div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <label for="education">Education</label>
+    </div>
+    <div class="panel-body">{{ cv.education }}</div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <label for="awards">Awards</label>
+    </div>
+    <div class="panel-body">{{ cv.awards}}</div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <label for="experience">Experience</label>
+    </div>
+    <div class="panel-body">{{ cv.experience}}</div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <label for="skills">Technical skills</label>
+    </div>
+    <div class="panel-body">{{ cv.technical }}</div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <label for="hobbies">Hobbies and interests</label>
+    </div>
+    <div class="panel-body">{{ cv.hobbies }}</div>
+  </div>
+
+  <form>
+
+    <label for="feedback">Feedback:</label>
+    <div class="form-group">
+      <textarea class="form-control" rows="5" name="feedback" id="feedback"[(ngModel)]="feedback.feedbackContent" ></textarea>
+    </div>
+
+    <label class="radio-inline"><input type="radio" name="status" value="Completed" [(ngModel)]="feedback.status" >Complete</label>
+    <label class="radio-inline"><input type="radio" name="status" value="Feedback Recieved" checked [(ngModel)]="feedback.status" >Incomplete</label>
+    <br>
+
+    <button (click)="submitFeedback()" class="btn btn-success">Submit</button>
+
+  </form>
+
+  <br/>
+  <br/>
+
+
+</div>

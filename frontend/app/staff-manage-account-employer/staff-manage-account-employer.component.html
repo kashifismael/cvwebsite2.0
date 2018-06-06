@@ -1,0 +1,31 @@
+<staff-navbar></staff-navbar>
+
+<div class="container" style="padding-top: 70px">
+
+
+  <staff-manage-account-tabs></staff-manage-account-tabs>
+
+  <h2 class="text-center">Employer Approval</h2>
+
+  <div class="alert alert-success" *ngIf="isAuthorized">
+    <strong>Success!</strong> {{ authEmployer.companyName }} has access until {{ authEmployer.accessExpiryDate }}
+  </div>
+
+  <table class="table">
+    <thead>
+      <th>Company ID</th>
+      <th>Company Name</th>
+      <th>Email</th>
+      <th>Approve</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employer of unauthEmployers" >
+        <td>{{ employer.id }}</td>
+        <td>{{ employer.companyName }}</td>
+        <td>{{ employer.user.emailAddress }}</td>
+        <td><button (click)="authorizeEmployer(employer)" class="btn btn-info">Approve</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

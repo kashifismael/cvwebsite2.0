@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h1>Welcome to CV website</h1>
+
+  <form>
+
+    <div class="form-group">
+      <label for="email">Email address: </label>
+      <input type="email" class="form-control" 
+      name="emailAddress" [(ngModel)]="emailAddress">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Password: </label>
+      <input type="password" class="form-control" 
+      name="password" [(ngModel)]="password">
+    </div>
+
+    <button (click)="logIntoSystem()" class="btn btn-primary">Log in</button>
+
+  </form>
+
+  <a [routerLink]="['/register-student']" >Register Student</a>
+  <br>
+  <a [routerLink]="['/register-employer']" >Register Employer</a>
+
+  <div class="alert alert-success" *ngIf="isAuthenticated">
+    <strong>Success!</strong> User Authenticated
+  </div>
+
+  <div class="alert alert-danger" *ngIf="deniedAccess">
+    <strong>Access Denied!</strong> Incorrect login
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+<staff-navbar></staff-navbar>
+
+<div class="container" style="padding-top: 70px;">
+
+  <h1 class="text-center">Manage Categories</h1>
+
+  <form>
+    <div class="row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Enter new Category" [(ngModel)]="newCategory.categoryName" name="categoryName">
+      </div>
+      <div class="col-sm-2">
+        <button (click)="addCategory()"  class="btn btn-success" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <br/>
+
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Category</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of allCategories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.categoryName }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

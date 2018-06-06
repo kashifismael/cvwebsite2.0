@@ -1,0 +1,16 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/staff">CV Website</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active"><a routerLink="/staff">Home</a></li>
+      <li routerLinkActive="active"><a routerLink="/manage-feedback/submitted">Feedback</a></li>
+      <li routerLinkActive="active"><a routerLink="/manage-category">Categories</a></li>
+      <li routerLinkActive="active"><a routerLink="/manage-account/staff">Manage Account</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a (click)="logOut()" >Logout</a></li>
+    </ul>
+  </div>
+</nav>

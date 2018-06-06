@@ -1,0 +1,32 @@
+<employer-navbar></employer-navbar>
+
+<div class="container" style="padding-top: 70px">
+
+  <h1>Search CV</h1>
+
+  <div class="form-group">
+    <label for="category">Select Category:</label>
+    <select name="category" class="form-control" [(ngModel)]="chosenCategory" (change)="filterCategory()">
+      <option value="All">All</option>
+      <option *ngFor="let category of allCategories" [value]="category.id">{{ category.categoryName }}</option>
+    </select>
+  </div>
+
+  <table class="table">
+    <thead>
+      <th>Student Id</th>
+      <th>CV Name</th>
+      <th>View</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cv of CVsToShow">
+        <td>{{ cv.studentId }}</td>
+        <td>{{ cv.name }}</td>
+        <td>
+          <a [routerLink]="['/employer-view-cv/'+cv.id]" class="btn btn-success">View</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
