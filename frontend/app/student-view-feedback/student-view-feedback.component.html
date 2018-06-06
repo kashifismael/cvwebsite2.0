@@ -1,0 +1,12 @@
+<student-navbar></student-navbar>
+
+<div class="container" style="padding-top: 70px">
+
+  <h1 class="text-center">{{ cv.name }} - Feedback page</h1>
+
+  <div class="panel panel-default" *ngFor="let feedback of listOfFeedbacks" >
+    <div class="panel-heading">Feedback {{ feedback.id }}  {{ feedback.createdAt }}</div>
+    <div class="panel-body">{{ feedback.feedbackContent }}</div>
+  </div>
+
+</div>

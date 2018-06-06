@@ -1,0 +1,131 @@
+<student-navbar></student-navbar>
+
+<div class="container" style="padding-top: 70px;">
+
+  <h2 class="text-center">Create CV</h2>
+
+  <p class="text-center">
+    Create a CV and submit it for feedback
+  </p>
+
+  <form>
+    <div id="profile">
+      <h3> Personal Profile </h3>
+      <p>&nbsp;3-4 sentences that describe:</p>
+      <ul>
+        <li>Who you are professionally speaking (e.g second year BSc Computer Science student).</li>
+        <li>What experience you have (e.g internships, voluntary, part-time, placement).</li>
+        <li>Why you want to work within your desired industry (e.g what interests you about the retail sector).</li>
+      </ul>
+      <p>&nbsp;
+        <em>This section needs to be tailored to each role you apply for and should summarise you succinctly to encourage an
+          employer to read on.</em>
+      </p>
+
+      <div class="form-group">
+        <textarea class="form-control" rows="5" name="profile" id="profile" [(ngModel)]="newCV.profile"></textarea>
+      </div>
+    </div>
+
+    <div id="education">
+      <h3> Education </h3>
+      <p>List education and any relevant courses that you have completed in reverse chronological order. Detail the institution
+        that you studied at, location, dates, course and the type of qualification.</p>
+      <p>For Example: BEng Aerospace Engineering, Kingston University, London, October 2010 &ndash;Present</p>
+      <p>
+        <em>Instead of listing modules, where possible, pick the most relevant modules and evidence how you were able to apply
+          the theory. Likewise, consider any relevant projects which may highlight some relevant skills. </em>
+      </p>
+      <p>For Example: Managed deadlines and developed analytical skills by successfully interviewing a panel of experts for
+        advice and opinion to inform the paper.</p>
+
+      <div class="form-group">
+        <textarea class="form-control" rows="5" name="edu" id="edu" [(ngModel)]="newCV.education"></textarea>
+      </div>
+    </div>
+
+    <div id="experience">
+      <h3> Personal Experience </h3>
+      <p> List the organisation you worked for, your job title, location, start and finish dates. This also needs to be listed
+        in reverse chronological order.</p>
+      <p> For Example: Sales Assistant, Argos, Kingston, November 2010 &ndash;Present</p>
+      <p> Instead of listing your duties, include your achievements and contributions to the business. Showcase the
+        <strong>skills </strong>that your prospective employers will most value in the role.</p>
+      <p> For Example: As a Sales Assistant at Argos, I am responsible for the promotion of special offers within the store.
+        I advise customers on specific products, whilst delivering excellent customer service. I also train team members,
+        informing them about store promotions and special offers. I am required to work accurately and efficiently to meet
+        store targets. This experience has allowed me to develop good communication and team working skills.</p>
+
+      <div class="form-group">
+        <textarea class="form-control" rows="5" name="exp" id="exp" [(ngModel)]="newCV.experience"></textarea>
+      </div>
+    </div>
+
+    <div id="skills">
+      <h3> Technical skills </h3>
+
+      <p>List your technical skills including use of operating systems, programming languages, design packages, scientific modelling
+        etc. Highlight the technical skills you have for the job in question. If the job description lists skills you have
+        experience with, include them.</p>
+      <p>Proficient in the use of Microsoft Office software.</p>
+      <p>Confident using AutoCAD.</p>
+      <div class="form-group">
+        <textarea class="form-control" rows="5" name="techSkills" id="techSkills" [(ngModel)]="newCV.technical"></textarea>
+      </div>
+    </div>
+
+    <div id="achievements">
+      <h3> Awards and Achievements </h3>
+
+      <p>Be proud of your awards and achievements. Avoid jargon, and if you&rsquo;ve won the "most prestigious" award in something
+        make sure you describe it.</p>
+      <p>I was awarded &lsquo;Most Dedicated Intern&rsquo; by the Flight Crew Manager for my contribution to the project and
+        team working abilities.</p>
+
+      <div class="form-group">
+        <textarea class="form-control" rows="5" name="awards" id="awards" [(ngModel)]="newCV.awards"></textarea>
+      </div>
+    </div>
+
+    <div id="hobbies">
+      <h3> Hobbies and interests </h3>
+      <p>List your interests and hobbies here. If you have an interest that is more of a passion, where your talent has been
+        recognised, describe it in greater detail here, up to 30 words. Again be mindful that it&rsquo;s not just what you
+        did, but how you did it that will impress a prospective employer. Hobbies and interests can be a useful way of showing
+        that you can do a job well, even if you lack specific experience in it.</p>
+
+      <p>I am interested in both civil and military aircraft and volunteer at Farnborough Air Show. I keep up to date with the
+        aviation industry and view different aircraft during the show.</p>
+
+      <div class="form-group">
+        <textarea class="form-control" rows="5" name="interests" id="interests" [(ngModel)]="newCV.hobbies"></textarea>
+      </div>
+    </div>
+
+    <div id="category">
+      <h3> Role Category </h3>
+      <p>Enter your CV against a role category to make it easier for employers to find your CV</p>
+      <label for="roleCategory">Select role category:</label>
+      <select name="roleCategory" id="roleCategory" class="form-control" [(ngModel)]="newCV.categoryId">
+        <option *ngFor="let category of allCategories" [value]="category.id" >{{ category.categoryName }}</option>
+      </select>
+    </div>
+    <br/>
+
+
+    <div class="input-group" id="cvName">
+      <span class="input-group-addon">Name</span>
+      <input id="cvName" type="text" class="form-control" name="cvName" placeholder="CV Name" [(ngModel)]="newCV.name">
+    </div>
+    <br/>
+
+    <div class="input-group" id="savesubmitbtns">
+      <button type="submit" name="savechoice" class="btn btn-success" (click)="saveCV()" >Save</button>
+      <button type="submit" name="submitchoice" class="btn btn-info" (click)="submitCV()" >Submit</button>
+    </div>
+    <br/>
+    <br/>
+
+  </form>
+
+</div>

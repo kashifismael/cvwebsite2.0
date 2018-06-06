@@ -1,0 +1,16 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/student">CV Website</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active"><a routerLink="/student">Home</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/manage-cv/all']" >Manage CV</a></li>
+      <li routerLinkActive="active"><a>Contact</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><button (click)="createCV()" class="btn btn-success navbar-btn">New CV</button></li>
+      <li><a (click)="logOut()" >Logout</a></li>
+    </ul>
+  </div>
+</nav>

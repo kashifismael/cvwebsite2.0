@@ -1,0 +1,41 @@
+<student-navbar></student-navbar>
+
+<div class="container" style="padding-top: 70px;">
+
+  <h1 class="text-center">{{ cv.name }}</h1>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><label for="profile">Profile</label></div>
+    <div class="panel-body">{{ cv.profile }}</div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><label for="education">Education</label></div>
+    <div class="panel-body">{{ cv.education }}</div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><label for="awards">Awards</label></div>
+    <div class="panel-body">{{ cv.awards}}</div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><label for="experience">Experience</label></div>
+    <div class="panel-body">{{ cv.experience}}</div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><label for="skills">Technical skills</label></div>
+    <div class="panel-body">{{ cv.technical }}</div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><label for="hobbies">Hobbies and interests</label></div>
+    <div class="panel-body">{{ cv.hobbies }}</div>
+  </div>
+
+  <a [routerLink]="['/edit-cv/'+cv.id]"  class="btn btn-warning">Edit</a>
+  <br>
+  <a [routerLink]="['/view-feedback/'+cv.id]" class="btn btn-info" >View Feedback</a>
+
+</div>
